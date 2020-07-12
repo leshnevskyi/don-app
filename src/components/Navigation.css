@@ -1,0 +1,9 @@
+.nav_section {
+	height: 100vh;
+	position: sticky;
+	top: 0;
+	background-image: url(../assets/images/nature_photo_1.5x.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+}

@@ -1,0 +1,28 @@
+.plus_icon {
+	--color: var(--main-neutral-color);
+	
+	height: 1.8vw;
+	min-height: 1.4rem;
+	width: 1.8vw;
+	min-width: 1.4rem;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: inherit;
+	pointer-events: none;
+}
+
+.plus_icon:before, .plus_icon:after {
+	content: '';
+	height: var(--bold-stroke-width);
+	width: 100%;
+	position: absolute;
+	left: 0;
+	background-color: rgb(var(--color));
+	transition: inherit;
+}
+
+.plus_icon:after {
+	transform: rotate(90deg);
+}

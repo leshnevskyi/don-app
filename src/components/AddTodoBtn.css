@@ -1,0 +1,33 @@
+.add_todo {
+	height: 10vw;
+	min-height: 7rem;
+	width: 5vw;
+	min-width: 4rem;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: transparent;
+	font-size: 0;
+	transition: 0.3s;
+}
+
+.add_todo:hover, .add_todo:focus {
+	background-color: rgb(var(--secondary-color), 0.5);
+}
+
+.add_todo:hover .plus_icon, .add_todo:focus .plus_icon {
+	--color: var(--main-accent-color);
+
+	transform: translateY(-5px) scale(1.15);
+}
+
+.add_todo:focus {
+	transition: 0.1s;
+}
+
+.add_todo:focus .plus_icon {
+	transform: translateY(-5px) scale(1);
+}
