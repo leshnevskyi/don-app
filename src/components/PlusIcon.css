@@ -10,7 +10,6 @@
 	align-items: center;
 	justify-content: center;
 	transition: inherit;
-	pointer-events: none;
 }
 
 .plus_icon:before, .plus_icon:after {

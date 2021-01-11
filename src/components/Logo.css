@@ -1,0 +1,12 @@
+#logo {
+	height: 1.6vw;
+	min-height: 2rem;
+}
+
+#logo-circle {
+	fill: rgb(var(--secondary-color));
+}
+
+#logo-typeface {
+	fill: rgb(var(--main-accent-color));
+}

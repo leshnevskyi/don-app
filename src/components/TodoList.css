@@ -1,0 +1,11 @@
+main {
+	--bg-color: var(--main-neutral-color);
+
+	background-color: rgb(var(--bg-color));
+}
+
+.todo_list {
+	display: flex;
+	flex-direction: column;
+	margin-top: var(--header-height);
+}

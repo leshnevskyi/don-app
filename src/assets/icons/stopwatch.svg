@@ -1,0 +1,14 @@
+<svg 
+	width='50' 
+	height='50' 
+	viewBox='0 0 50 50' 
+	fill='none' 
+	xmlns='http://www.w3.org/2000/svg'
+>
+	<g id='stopwatch'>
+		<circle cx='24' cy='28' r='15' vector-effect='non-scaling-stroke'/>
+		<path d='M24 28L32 20' vector-effect='non-scaling-stroke'/>
+		<path d='M18 8H30' vector-effect='non-scaling-stroke'/>
+		<path d='M35 11L41 17' vector-effect='non-scaling-stroke'/>
+	</g>
+</svg>

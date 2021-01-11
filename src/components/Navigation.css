@@ -1,9 +1,46 @@
 .nav_section {
-	height: 100vh;
 	position: sticky;
 	top: 0;
+	height: 100vh;
 	background-image: url(../assets/images/nature_photo_1.5x.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
+}
+
+.nav_section:before {
+	content: '';
+	position: absolute;
+	height: var(--header-height);
+	width: 100%;
+	background-color: rgba(var(--main-accent-color), 0.15);
+	backdrop-filter: blur(17px);
+	z-index: -1;
+	transition-duration: var(--slow-transition-duration);
+}
+
+.nav_section.opened:before {
+	height: 100%;
+}
+
+.nav_items_list {
+	--gradient-x-pos: 0;
+	
+	position: relative;
+	width: 100%;
+	margin-top: var(--header-height);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 5px;
+}
+
+.nav_item {
+	position: relative;
+	width: 100%;
+	background-image: linear-gradient(to right,
+		rgba(var(--main-accent-color), 0.4),
+		rgba(var(--main-accent-color), 0)
+	);
 }

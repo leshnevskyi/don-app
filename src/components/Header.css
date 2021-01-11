@@ -1,8 +1,20 @@
 .header {
-	height: var(--header-height);
-	width: 100vw;
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
+	height: var(--header-height);
+	width: 100vw;
+	display: grid;
+	grid-template-columns: var(--grid-template-columns);
+	grid-template-areas: 'toggle_nav_btn current_date logo';
 	z-index: 10;
+}
+
+.header > * {
+	align-self: center;
+	justify-self: center;
+}
+
+.header .logo {
+	grid-area: logo;
 }

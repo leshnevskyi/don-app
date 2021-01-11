@@ -1,0 +1,199 @@
+.task_editor {
+	--todo-item-height: 5.5em;
+	--padding: 1.8em;
+
+	position: relative;
+	height: var(--todo-item-height);
+	width: 100%;
+	display: flex;
+	align-items: center;
+	background-color: rgb(var(--main-neutral-color));
+	margin-bottom: 1.7em;
+	transition: 
+		background-color var(--default-transition-duration),
+		color var(--fast-transition-duration);
+	z-index: 10;
+}
+
+.task_editor.completed_task {
+	color: rgb(var(--neutral-grey-color));
+	background-color: transparent;
+}
+
+.task_editor .task_input {
+	--shadow-opacity: 0.1;
+
+	position: relative;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	padding: 0 var(--padding);
+	font-size: 1.35em;
+	font-weight: var(--lighter-font-weight);
+	letter-spacing: var(--narrow-tracking);
+	box-shadow: 0 35px 50px 0 rgb(
+		var(--secondary-color), var(--shadow-opacity)
+	);
+	background-color: transparent;
+	transition:
+		color var(--default-transition-duration), 
+		height var(--default-transition-duration),
+		box-shadow var(--default-transition-duration);
+	caret-color: rgb(var(--secondary-color));
+	border: none;
+}
+
+.task_editor .task_input:hover {
+	--shadow-opacity: 0.2;
+}
+
+.task_editor:before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	height: 100%;
+	width: 100%;
+	background-color: rgb(var(--main-accent-color));
+	transform: translateX(-50%) scaleX(0);
+	transition: var(--default-transition-duration);
+}
+
+.task_editor.active:before {
+	transform: translateX(0) scaleX(1);
+}
+
+.task_editor:after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	height: var(--bold-stroke-width);
+	width: 100%;
+	background-color: rgb(var(--secondary-color));
+	transform: translateX(-50%) scaleX(0);
+	transition: var(--default-transition-duration);
+}
+
+.task_editor.active:after {
+	transform: translateX(0) scaleX(1);
+}
+
+.task_editor.active .task_input {
+	color: rgb(var(--white-color));
+	box-shadow: 
+		0 35px 70px 0 rgb(var(--main-accent-color), 0.15),
+		0 10px 30px 0 rgb(var(--main-accent-color), 0.15);
+}
+
+.task_editor .checkbox_wrapper {
+	position: absolute;
+	left: 0;
+	height: 100%;
+	width: var(--todo-item-height);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: rgb(var(--white-color));
+	transform: translateX(-100%);
+	z-index: 1;
+}
+
+.checkbox_wrapper,
+.checkbox_wrapper * {
+	cursor: pointer;
+}
+
+.checkbox {
+	--size: calc(0.3 * var(--todo-item-height));
+
+	position: relative;
+	appearance: none;
+	height: var(--size);
+	width: var(--size);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 100%;
+	background-color: rgb(var(--secondary-color));
+	overflow: hidden;
+}
+
+.checkbox:before, 
+.checkbox:after {
+	content: '';
+	position: absolute;
+	border-radius: 100%;
+	transition: var(--default-transition-duration);
+} 
+
+.checkbox:before {
+	height: 50%;
+	width: 50%;
+	background-color: rgb(var(--white-color));
+}
+
+.checkbox:after {
+	height: 100%;
+	width: 100%;
+	background-color: rgb(var(--main-accent-color));
+	opacity: 0;
+	transform: scale(0);
+}
+
+.checkbox:checked:before {
+	transform: scale(3);
+}
+
+.checkbox:checked:after {
+	opacity: 1;
+	transform: scale(1);
+}
+
+.task_editor .task_state {
+	position: absolute;
+	right: 0;
+	height: 100%;
+	width: var(--sidebar-width);
+	display: flex;
+	align-items: center;
+	border-bottom: 
+		var(--default-stroke-width) solid rgb(var(--main-neutral-color));
+	background-color: rgb(var(--white-color));
+	transform: translateX(100%);
+	transition: color var(--fast-transition-duration);
+}
+
+.task_editor .task_state * {
+	transition: inherit;
+	font-weight: var(--heavier-font-weight);
+}
+
+.task_state .timer {
+	height: 100%;
+	width: 100%;
+}
+
+.task_editor.active .close_icon {
+	--color: rgb(var(--white-color));
+}
+
+.set_timer_btn {
+	--icon-color: var(--secondary-color);
+
+	background: none;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	padding: 0 var(--padding);
+	gap: calc(var(--padding) / 2);
+}
+
+.set_timer_btn:hover {
+	--icon-color: var(--main-accent-color);
+}
+
+.set_timer_btn .icon {
+	height: 2.7em;
+	stroke-width: var(--medium-stroke-width);
+	stroke: rgb(var(--icon-color));
+}

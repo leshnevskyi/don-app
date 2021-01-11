@@ -1,31 +1,27 @@
 import React from 'react';
+import {useDispatch} from 'react-redux';
+
+import {addTodo} from 'stateSlices/todosSlice'
+
+import Button from './Button';
 import PlusIcon from './PlusIcon';
 
 import './AddTodoBtn.css'
 
 export default function AddTodoBtn() {
-	function handleClick(e) {
-		blur(e);
-	}
+	const dispatch = useDispatch();
 
-	function focus(e) {
-		e.target.focus();
-	}
-
-	function blur(e) {
-		e.target.blur();
+	function handleClick() {
+		dispatch(addTodo());
 	}
 
 	return (
-		<button 
-		aria-label="Add todo item"
-		type="button" 
-		className="add_todo" 
-		onClick={handleClick}
-		onMouseLeave={blur}
-		onTouchStart={focus}
-		onTouchEnd={handleClick}>
+		<Button 
+			aria-label='Add todo item.'
+			className='add_todo_btn'
+			onClick={handleClick}
+		>
 			<PlusIcon/>
-		</button>
+		</Button>
 	);
 }

@@ -1,0 +1,29 @@
+.nav_icon {
+	--top-el-transformation: translate(25%, -100%) rotate(0);
+	--bottom-el-transformation: translate(-25%, 100%) rotate(0);
+	
+	position: relative;
+	height: var(--bold-stroke-width);
+	width: 3.2rem;
+	display: flex;
+	margin-right: 1.8rem;
+}
+
+.nav_icon:before, .nav_icon:after {
+	content: '';
+	position: absolute;
+	height: var(--bold-stroke-width);
+	height: 100%;
+	width: 100%;
+	transition: none !important;
+}
+
+.nav_icon:after {
+	transform: var(--top-el-transformation);
+	background-color: rgb(var(--white-color));
+}
+
+.nav_icon:before {
+	transform: var(--bottom-el-transformation);
+	background-color: rgb(var(--neutral-grey-color));
+}

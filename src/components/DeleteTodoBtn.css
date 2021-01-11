@@ -1,0 +1,17 @@
+.delete_todo_btn {
+	position: absolute;
+	right: 0;
+	padding: var(--padding);
+	background-color: transparent;
+	opacity: 0.3;
+}
+
+.delete_todo_btn:hover {
+	opacity: 1;
+}
+
+.delete_todo_btn:focus .close_icon {
+	--color: rgb(var(--main-accent-color));
+
+	transform: scale(0.9);
+}

@@ -1,0 +1,22 @@
+.toggle_nav_btn {
+	--color: var(--secondary-color);
+
+	height: 70%;
+	width: 70%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: none;
+	border-radius: 100vmax;
+}
+
+
+.toggle_nav_btn .label {
+	text-transform: uppercase;
+	font-weight: 600;
+	color: rgb(var(--color));
+}
+
+.toggle_nav_btn:focus {
+	transform: translateX(-3%);
+}

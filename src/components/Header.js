@@ -1,13 +1,20 @@
 import React from 'react';
+import {NavLink} from 'react-router-dom';
 
-import './Header.css'
+import './Header.css';
+
+import CurrentDate from './CurrentDate';
+import ToggleNavBtn from './ToggleNavBtn';
+import Logo from './Logo';
 
 export default function Header() {
 	return (
-		<header class="header">
-			{/* <ToggleNavBtn/>
+		<header className="header">
+			<ToggleNavBtn/>
 			<CurrentDate/>
-			<Logo/> */}
+			<NavLink to="/" className="logo">
+				<Logo/>
+			</NavLink>
 		</header>		
 	);
 }
